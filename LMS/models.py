@@ -30,6 +30,22 @@ class Submission(models.Model):
     grade = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
 
 
+class Quiz(models.Model):
+    title = models.CharField(max_length=255)
+    course = models.ForeignKey(Course, related_name='quizzes', on_delete=models.CASCADE)
+    deadline = models.DateTimeField()
+
+class Question(models.Model):
+    quiz = models.ForeignKey(Quiz, related_name='questions', on_delete=models.CASCADE)
+    text = models.CharField(max_length=255)
+    correct_answer = models.CharField(max_length=255)
+    question_type = models.CharField(max_length=50, choices=[('mcq', 'Multiple Choice'), ('tf', 'True/False')])
+
+class Answer(models.Model):
+    student = models.ForeignKey(User, related_name='answers', on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, related_name='answers', on_delete=models.CASCADE)
+    answer = models.CharField(max_length=255)
+    correct = models.BooleanField(default=False)
 
 
 
