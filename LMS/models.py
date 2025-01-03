@@ -17,6 +17,17 @@ class Lesson(models.Model):
     content = models.TextField()
     video_url = models.URLField(blank=True, null=True)
 
+class Enrollment(models.Model):
+    student = models.ForeignKey(User, related_name='enrollments', on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, related_name='enrollments', on_delete=models.CASCADE)
+    enrollment_date = models.DateTimeField(auto_now_add=True)
+    progress = models.FloatField(default=0)  # Track the percentage of completion
+
+class Submission(models.Model):
+    student = models.ForeignKey(User, related_name='submissions', on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, related_name='submissions', on_delete=models.CASCADE)
+    content = models.TextField()
+    grade = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
 
 
 
