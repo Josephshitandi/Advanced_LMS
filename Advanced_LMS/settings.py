@@ -75,7 +75,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Advanced_LMS.wsgi.application'
 
-AUTH_USER_MODEL = 'LSM.User'
+AUTH_USER_MODEL = 'LMS.User'
 
 
 
