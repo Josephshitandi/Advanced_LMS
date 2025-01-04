@@ -18,4 +18,6 @@ class SubmissionViewSet(viewsets.ModelViewSet):
     queryset = Submission.objects.all()
     serializer_class = CourseSerializer
 
-
+class EnrollmentViewSet(viewsets.ModelViewSet):
+    queryset = Enrollment.objects.all()
+    serializer_class = CourseSerializer
