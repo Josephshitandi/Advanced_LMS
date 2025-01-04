@@ -26,4 +26,10 @@ class EnrollmentSerializer(serializers.ModelSerializer):
         model = Enrollment
         fields = '__all__'
 
+class QuizSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Quiz
+        fields = '__all__'
+
+
 

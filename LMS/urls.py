@@ -8,6 +8,7 @@ router.register(r'course', CourseViewSet)
 router.register(r'lesson', LessonViewSet)
 router.register(r'submission', SubmissionViewSet)
 router.register(r'enrollment', EnrollmentViewSet)
+router.register(r'quiz', QuizViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
