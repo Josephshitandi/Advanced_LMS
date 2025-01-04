@@ -10,6 +10,7 @@ router.register(r'submission', SubmissionViewSet)
 router.register(r'enrollment', EnrollmentViewSet)
 router.register(r'quiz', QuizViewSet)
 router.register(r'question', QuestionViewSet)
+router.register(r'answer', AnswerViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
