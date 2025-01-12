@@ -11,6 +11,7 @@ router.register(r'enrollment', EnrollmentViewSet)
 router.register(r'quiz', QuizViewSet)
 router.register(r'question', QuestionViewSet)
 router.register(r'answer', AnswerViewSet)
+router.register(r'contact', ContactViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
