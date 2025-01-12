@@ -47,8 +47,11 @@ class Answer(models.Model):
     answer = models.CharField(max_length=255)
     correct = models.BooleanField(default=False)
 
-
-
+class Contact(models.Model):
+    help = models.CharField(max_length=255)
+    fullnames = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    country = models.CharField(max_length=255)
 
 
 
